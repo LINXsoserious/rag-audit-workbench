@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rag-audit-workbench"
+version = "0.1.0"
+description = "Offline RAG evidence auditing and source-revocation replay workbench"
+requires-python = ">=3.11"
+license = "MIT"
+readme = "README.md"
+dependencies = []
+
+[project.optional-dependencies]
+ui = ["streamlit>=1.40,<2"]
+dev = ["pytest>=8,<10", "build>=1,<2"]
+
+[project.scripts]
+rag-audit = "rag_audit.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rag_audit"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+

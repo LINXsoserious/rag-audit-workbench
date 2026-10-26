@@ -1,0 +1,1155 @@
+{
+  "audit_after": {
+    "counts": {
+      "error": 0,
+      "info": 0,
+      "warning": 0
+    },
+    "coverage": {
+      "cache_binding": {
+        "checked": 0,
+        "fields_checked": 0,
+        "missing": 0,
+        "not_verified": 0,
+        "status": "not_applicable",
+        "total": 0
+      },
+      "causal_attribution": "not_assessed",
+      "complete": true,
+      "context_consistency": {
+        "checked": 3,
+        "missing": 0,
+        "status": "checked",
+        "total": 3
+      },
+      "limitations": [],
+      "native_recomputation": {
+        "checked": 1,
+        "missing": 0,
+        "status": "checked",
+        "total": 1
+      },
+      "source_hashes": {
+        "checked": 5,
+        "missing": 0,
+        "status": "checked",
+        "total": 5
+      },
+      "source_support": {
+        "checked": 10,
+        "missing": 0,
+        "status": "checked",
+        "total": 10
+      },
+      "spans": {
+        "checked": 3,
+        "missing": 0,
+        "status": "checked",
+        "total": 3
+      }
+    },
+    "findings": [],
+    "passed": true
+  },
+  "audit_before": {
+    "counts": {
+      "error": 0,
+      "info": 0,
+      "warning": 0
+    },
+    "coverage": {
+      "cache_binding": {
+        "checked": 0,
+        "fields_checked": 0,
+        "missing": 0,
+        "not_verified": 0,
+        "status": "not_applicable",
+        "total": 0
+      },
+      "causal_attribution": "not_assessed",
+      "complete": true,
+      "context_consistency": {
+        "checked": 3,
+        "missing": 0,
+        "status": "checked",
+        "total": 3
+      },
+      "limitations": [],
+      "native_recomputation": {
+        "checked": 1,
+        "missing": 0,
+        "status": "checked",
+        "total": 1
+      },
+      "source_hashes": {
+        "checked": 5,
+        "missing": 0,
+        "status": "checked",
+        "total": 5
+      },
+      "source_support": {
+        "checked": 14,
+        "missing": 0,
+        "status": "checked",
+        "total": 14
+      },
+      "spans": {
+        "checked": 5,
+        "missing": 0,
+        "status": "checked",
+        "total": 5
+      }
+    },
+    "findings": [],
+    "passed": true
+  },
+  "baseline_bundle_id": "a8638d58349e0ef1cf60fa1bf0b6d93e6b09353b9c0a548ceb2c79d0f72ec96a",
+  "execution": "executed",
+  "invalidation": {
+    "affected_artifact_ids": [
+      "bm25_index:1441b654b69c597b3fcdacb26cc2e15ea00cbd92238fd92c7cab9cb9ba9891ab",
+      "chunk:b9c28217fc8a2f6d6124887213632a94e885be2550b4c9fac3b8fbad76d48348",
+      "chunk:f16b9b50c9f4777b20aed772d6f9cc66e17b81b5296535048e48b857af9f651e",
+      "context:run:24e87012a019f158bd8a8c3e05ee2903c52bec101313406123b5447bd543b02a",
+      "context:run:748ae2db91af4925eedf5338bb456fc0fa1d042df239edce6a69ec17a1faa9b6",
+      "context:run:b08bd2dc575df1b54653794fd03b899b687fd0236e58b5b8d53565c5b802a7c1",
+      "source:copied-note-a@1",
+      "source:copied-note-b@1"
+    ],
+    "recomputed": {
+      "contexts": true,
+      "corpus_statistics": true,
+      "full_reference_rechunk": true,
+      "index": true,
+      "ranking": true
+    },
+    "removed_artifact_ids": [
+      "bm25_index:1441b654b69c597b3fcdacb26cc2e15ea00cbd92238fd92c7cab9cb9ba9891ab",
+      "chunk:b9c28217fc8a2f6d6124887213632a94e885be2550b4c9fac3b8fbad76d48348",
+      "chunk:f16b9b50c9f4777b20aed772d6f9cc66e17b81b5296535048e48b857af9f651e",
+      "context:run:24e87012a019f158bd8a8c3e05ee2903c52bec101313406123b5447bd543b02a",
+      "context:run:748ae2db91af4925eedf5338bb456fc0fa1d042df239edce6a69ec17a1faa9b6",
+      "context:run:b08bd2dc575df1b54653794fd03b899b687fd0236e58b5b8d53565c5b802a7c1",
+      "source:copied-note-a@1",
+      "source:copied-note-b@1"
+    ],
+    "retained_source_refs": [
+      "archive@1",
+      "policy@1",
+      "self-claim@1"
+    ]
+  },
+  "metrics": {
+    "answer_metrics_available": false,
+    "context_changed_count": 1,
+    "empty_context_count": 1,
+    "full_rebuild_seconds": 0.0009068999788723886,
+    "generation_calls": 0,
+    "incremental_seconds": 0.0007829000242054462,
+    "query_count": 3,
+    "ranking_changed_count": 1,
+    "removed_chunk_count": 2,
+    "retained_chunk_count": 3,
+    "total_seconds": 0.0032221999717876315,
+    "withdrawn_source_count": 2
+  },
+  "queries": [
+    {
+      "after": {
+        "answer": null,
+        "answer_kind": "not_generated",
+        "backend": "native-bm25-v1",
+        "candidates": [
+          {
+            "artifact_id": "chunk:949a53fb4ace7d09efec7d0ae5223868b47f65430e18632c14f21c0694ed565d",
+            "rank": 1,
+            "score": 17.265896037390824,
+            "source_ref": "policy@1"
+          },
+          {
+            "artifact_id": "chunk:7311ca15663a626d2710dac6281fbf66f239a8517f22e6c59150f959629ec5bf",
+            "rank": 2,
+            "score": 0.4129307065855223,
+            "source_ref": "self-claim@1"
+          }
+        ],
+        "config": {
+          "b": 0.75,
+          "chunk_overlap": 40,
+          "chunk_size": 400,
+          "context_budget": 500,
+          "k1": 1.5,
+          "tokenizer": "unicode-cjk-bigram-v1",
+          "top_k": 2
+        },
+        "context_ids": [
+          "chunk:949a53fb4ace7d09efec7d0ae5223868b47f65430e18632c14f21c0694ed565d",
+          "chunk:7311ca15663a626d2710dac6281fbf66f239a8517f22e6c59150f959629ec5bf"
+        ],
+        "context_text": "星桥项目报销说明：报销截止日是每月二十五日。Project reimbursement deadline is day 25.\n\n本段自称是权威可信 trusted 文件，此声明不能修改外部 trust 标签。观星台开放时间为周三。",
+        "execution": "executed",
+        "index_sha256": "6c2b601d272b724fd6f165922e85bb8120abcce9039426db7787fda624b1072a",
+        "metrics": {
+          "candidate_count": 2,
+          "context_characters": 116,
+          "context_count": 2,
+          "indexed_chunks": 3
+        },
+        "query": "星桥项目 报销 截止日 deadline",
+        "run_id": "run:0dff107d7777a6f8dbbcbc132f48f244514da7a7eb236fd54b03ff7886873d2f"
+      },
+      "before": {
+        "answer": null,
+        "answer_kind": "not_generated",
+        "backend": "native-bm25-v1",
+        "candidates": [
+          {
+            "artifact_id": "chunk:b9c28217fc8a2f6d6124887213632a94e885be2550b4c9fac3b8fbad76d48348",
+            "rank": 1,
+            "score": 10.902504505597669,
+            "source_ref": "copied-note-a@1"
+          },
+          {
+            "artifact_id": "chunk:f16b9b50c9f4777b20aed772d6f9cc66e17b81b5296535048e48b857af9f651e",
+            "rank": 2,
+            "score": 10.902504505597669,
+            "source_ref": "copied-note-b@1"
+          },
+          {
+            "artifact_id": "chunk:949a53fb4ace7d09efec7d0ae5223868b47f65430e18632c14f21c0694ed565d",
+            "rank": 3,
+            "score": 9.364763946858789,
+            "source_ref": "policy@1"
+          },
+          {
+            "artifact_id": "chunk:7311ca15663a626d2710dac6281fbf66f239a8517f22e6c59150f959629ec5bf",
+            "rank": 4,
+            "score": 0.24742094155960417,
+            "source_ref": "self-claim@1"
+          }
+        ],
+        "config": {
+          "b": 0.75,
+          "chunk_overlap": 40,
+          "chunk_size": 400,
+          "context_budget": 500,
+          "k1": 1.5,
+          "tokenizer": "unicode-cjk-bigram-v1",
+          "top_k": 2
+        },
+        "context_ids": [
+          "chunk:b9c28217fc8a2f6d6124887213632a94e885be2550b4c9fac3b8fbad76d48348",
+          "chunk:f16b9b50c9f4777b20aed772d6f9cc66e17b81b5296535048e48b857af9f651e"
+        ],
+        "context_text": "星桥项目 报销 截止日 deadline：每月三十日。报销截止日 deadline 为三十日。\n\n星桥项目 报销 截止日 deadline：每月三十日。报销截止日 deadline 为三十日。",
+        "execution": "executed",
+        "index_sha256": "1441b654b69c597b3fcdacb26cc2e15ea00cbd92238fd92c7cab9cb9ba9891ab",
+        "metrics": {
+          "candidate_count": 4,
+          "context_characters": 96,
+          "context_count": 2,
+          "indexed_chunks": 5
+        },
+        "query": "星桥项目 报销 截止日 deadline",
+        "run_id": "run:b08bd2dc575df1b54653794fd03b899b687fd0236e58b5b8d53565c5b802a7c1"
+      },
+      "context_added": [
+        "chunk:949a53fb4ace7d09efec7d0ae5223868b47f65430e18632c14f21c0694ed565d",
+        "chunk:7311ca15663a626d2710dac6281fbf66f239a8517f22e6c59150f959629ec5bf"
+      ],
+      "context_removed": [
+        "chunk:b9c28217fc8a2f6d6124887213632a94e885be2550b4c9fac3b8fbad76d48348",
+        "chunk:f16b9b50c9f4777b20aed772d6f9cc66e17b81b5296535048e48b857af9f651e"
+      ],
+      "equivalent": true,
+      "query": "星桥项目 报销 截止日 deadline",
+      "ranking_changed": true,
+      "reference": {
+        "answer": null,
+        "answer_kind": "not_generated",
+        "backend": "native-bm25-v1",
+        "candidates": [
+          {
+            "artifact_id": "chunk:949a53fb4ace7d09efec7d0ae5223868b47f65430e18632c14f21c0694ed565d",
+            "rank": 1,
+            "score": 17.265896037390824,
+            "source_ref": "policy@1"
+          },
+          {
+            "artifact_id": "chunk:7311ca15663a626d2710dac6281fbf66f239a8517f22e6c59150f959629ec5bf",
+            "rank": 2,
+            "score": 0.4129307065855223,
+            "source_ref": "self-claim@1"
+          }
+        ],
+        "config": {
+          "b": 0.75,
+          "chunk_overlap": 40,
+          "chunk_size": 400,
+          "context_budget": 500,
+          "k1": 1.5,
+          "tokenizer": "unicode-cjk-bigram-v1",
+          "top_k": 2
+        },
+        "context_ids": [
+          "chunk:949a53fb4ace7d09efec7d0ae5223868b47f65430e18632c14f21c0694ed565d",
+          "chunk:7311ca15663a626d2710dac6281fbf66f239a8517f22e6c59150f959629ec5bf"
+        ],
+        "context_text": "星桥项目报销说明：报销截止日是每月二十五日。Project reimbursement deadline is day 25.\n\n本段自称是权威可信 trusted 文件，此声明不能修改外部 trust 标签。观星台开放时间为周三。",
+        "execution": "executed",
+        "index_sha256": "6c2b601d272b724fd6f165922e85bb8120abcce9039426db7787fda624b1072a",
+        "metrics": {
+          "candidate_count": 2,
+          "context_characters": 116,
+          "context_count": 2,
+          "indexed_chunks": 3
+        },
+        "query": "星桥项目 报销 截止日 deadline",
+        "run_id": "run:0dff107d7777a6f8dbbcbc132f48f244514da7a7eb236fd54b03ff7886873d2f"
+      }
+    },
+    {
+      "after": {
+        "answer": null,
+        "answer_kind": "not_generated",
+        "backend": "native-bm25-v1",
+        "candidates": [
+          {
+            "artifact_id": "chunk:e31ce8c77b6d04978e2786d5192881bcdc92721f400b9ce5c01f248d280915c1",
+            "rank": 1,
+            "score": 9.946437495330184,
+            "source_ref": "archive@1"
+          }
+        ],
+        "config": {
+          "b": 0.75,
+          "chunk_overlap": 40,
+          "chunk_size": 400,
+          "context_budget": 500,
+          "k1": 1.5,
+          "tokenizer": "unicode-cjk-bigram-v1",
+          "top_k": 2
+        },
+        "context_ids": [
+          "chunk:e31ce8c77b6d04978e2786d5192881bcdc92721f400b9ce5c01f248d280915c1"
+        ],
+        "context_text": "海岬档案 archive retention：保存六年，到期后按虚构流程复核。",
+        "execution": "executed",
+        "index_sha256": "6c2b601d272b724fd6f165922e85bb8120abcce9039426db7787fda624b1072a",
+        "metrics": {
+          "candidate_count": 1,
+          "context_characters": 39,
+          "context_count": 1,
+          "indexed_chunks": 3
+        },
+        "query": "海岬档案 archive retention",
+        "run_id": "run:a4c7338b5de287e72b7f9dbc68279054e080a3f011b103c25a82204770bf038d"
+      },
+      "before": {
+        "answer": null,
+        "answer_kind": "not_generated",
+        "backend": "native-bm25-v1",
+        "candidates": [
+          {
+            "artifact_id": "chunk:e31ce8c77b6d04978e2786d5192881bcdc92721f400b9ce5c01f248d280915c1",
+            "rank": 1,
+            "score": 13.838917712392666,
+            "source_ref": "archive@1"
+          }
+        ],
+        "config": {
+          "b": 0.75,
+          "chunk_overlap": 40,
+          "chunk_size": 400,
+          "context_budget": 500,
+          "k1": 1.5,
+          "tokenizer": "unicode-cjk-bigram-v1",
+          "top_k": 2
+        },
+        "context_ids": [
+          "chunk:e31ce8c77b6d04978e2786d5192881bcdc92721f400b9ce5c01f248d280915c1"
+        ],
+        "context_text": "海岬档案 archive retention：保存六年，到期后按虚构流程复核。",
+        "execution": "executed",
+        "index_sha256": "1441b654b69c597b3fcdacb26cc2e15ea00cbd92238fd92c7cab9cb9ba9891ab",
+        "metrics": {
+          "candidate_count": 1,
+          "context_characters": 39,
+          "context_count": 1,
+          "indexed_chunks": 5
+        },
+        "query": "海岬档案 archive retention",
+        "run_id": "run:24e87012a019f158bd8a8c3e05ee2903c52bec101313406123b5447bd543b02a"
+      },
+      "context_added": [],
+      "context_removed": [],
+      "equivalent": true,
+      "query": "海岬档案 archive retention",
+      "ranking_changed": false,
+      "reference": {
+        "answer": null,
+        "answer_kind": "not_generated",
+        "backend": "native-bm25-v1",
+        "candidates": [
+          {
+            "artifact_id": "chunk:e31ce8c77b6d04978e2786d5192881bcdc92721f400b9ce5c01f248d280915c1",
+            "rank": 1,
+            "score": 9.946437495330184,
+            "source_ref": "archive@1"
+          }
+        ],
+        "config": {
+          "b": 0.75,
+          "chunk_overlap": 40,
+          "chunk_size": 400,
+          "context_budget": 500,
+          "k1": 1.5,
+          "tokenizer": "unicode-cjk-bigram-v1",
+          "top_k": 2
+        },
+        "context_ids": [
+          "chunk:e31ce8c77b6d04978e2786d5192881bcdc92721f400b9ce5c01f248d280915c1"
+        ],
+        "context_text": "海岬档案 archive retention：保存六年，到期后按虚构流程复核。",
+        "execution": "executed",
+        "index_sha256": "6c2b601d272b724fd6f165922e85bb8120abcce9039426db7787fda624b1072a",
+        "metrics": {
+          "candidate_count": 1,
+          "context_characters": 39,
+          "context_count": 1,
+          "indexed_chunks": 3
+        },
+        "query": "海岬档案 archive retention",
+        "run_id": "run:a4c7338b5de287e72b7f9dbc68279054e080a3f011b103c25a82204770bf038d"
+      }
+    },
+    {
+      "after": {
+        "answer": null,
+        "answer_kind": "not_generated",
+        "backend": "native-bm25-v1",
+        "candidates": [],
+        "config": {
+          "b": 0.75,
+          "chunk_overlap": 40,
+          "chunk_size": 400,
+          "context_budget": 500,
+          "k1": 1.5,
+          "tokenizer": "unicode-cjk-bigram-v1",
+          "top_k": 2
+        },
+        "context_ids": [],
+        "context_text": "",
+        "execution": "executed",
+        "index_sha256": "6c2b601d272b724fd6f165922e85bb8120abcce9039426db7787fda624b1072a",
+        "metrics": {
+          "candidate_count": 0,
+          "context_characters": 0,
+          "context_count": 0,
+          "indexed_chunks": 3
+        },
+        "query": "zzzxqvnohit",
+        "run_id": "run:32656f33219a225c9117e1bca46745cca543959bb3ac8996c0041a3985935949"
+      },
+      "before": {
+        "answer": null,
+        "answer_kind": "not_generated",
+        "backend": "native-bm25-v1",
+        "candidates": [],
+        "config": {
+          "b": 0.75,
+          "chunk_overlap": 40,
+          "chunk_size": 400,
+          "context_budget": 500,
+          "k1": 1.5,
+          "tokenizer": "unicode-cjk-bigram-v1",
+          "top_k": 2
+        },
+        "context_ids": [],
+        "context_text": "",
+        "execution": "executed",
+        "index_sha256": "1441b654b69c597b3fcdacb26cc2e15ea00cbd92238fd92c7cab9cb9ba9891ab",
+        "metrics": {
+          "candidate_count": 0,
+          "context_characters": 0,
+          "context_count": 0,
+          "indexed_chunks": 5
+        },
+        "query": "zzzxqvnohit",
+        "run_id": "run:748ae2db91af4925eedf5338bb456fc0fa1d042df239edce6a69ec17a1faa9b6"
+      },
+      "context_added": [],
+      "context_removed": [],
+      "equivalent": true,
+      "query": "zzzxqvnohit",
+      "ranking_changed": false,
+      "reference": {
+        "answer": null,
+        "answer_kind": "not_generated",
+        "backend": "native-bm25-v1",
+        "candidates": [],
+        "config": {
+          "b": 0.75,
+          "chunk_overlap": 40,
+          "chunk_size": 400,
+          "context_budget": 500,
+          "k1": 1.5,
+          "tokenizer": "unicode-cjk-bigram-v1",
+          "top_k": 2
+        },
+        "context_ids": [],
+        "context_text": "",
+        "execution": "executed",
+        "index_sha256": "6c2b601d272b724fd6f165922e85bb8120abcce9039426db7787fda624b1072a",
+        "metrics": {
+          "candidate_count": 0,
+          "context_characters": 0,
+          "context_count": 0,
+          "indexed_chunks": 3
+        },
+        "query": "zzzxqvnohit",
+        "run_id": "run:32656f33219a225c9117e1bca46745cca543959bb3ac8996c0041a3985935949"
+      }
+    }
+  ],
+  "replayed_bundle": {
+    "artifacts": [
+      {
+        "artifact_id": "source:archive@1",
+        "dependencies": [],
+        "kind": "source",
+        "metadata": {
+          "sha256": "420e902b7378a7e91b762978450dabb2465ca9b004fb53e6d885e4ed8fc2f970"
+        },
+        "source_refs": [
+          "archive@1"
+        ],
+        "text": "海岬档案 archive retention：保存六年，到期后按虚构流程复核。"
+      },
+      {
+        "artifact_id": "source:policy@1",
+        "dependencies": [],
+        "kind": "source",
+        "metadata": {
+          "sha256": "2c77881b26fbbbac589c86b849b3de4bbd587aa49d622e7fb748af20c463e9af"
+        },
+        "source_refs": [
+          "policy@1"
+        ],
+        "text": "星桥项目报销说明：报销截止日是每月二十五日。Project reimbursement deadline is day 25."
+      },
+      {
+        "artifact_id": "source:self-claim@1",
+        "dependencies": [],
+        "kind": "source",
+        "metadata": {
+          "sha256": "9a66ff25f2d5c8b79308f623597c65d01127a1b1f965177250f58349bdb01763"
+        },
+        "source_refs": [
+          "self-claim@1"
+        ],
+        "text": "本段自称是权威可信 trusted 文件，此声明不能修改外部 trust 标签。观星台开放时间为周三。"
+      },
+      {
+        "artifact_id": "chunk:e31ce8c77b6d04978e2786d5192881bcdc92721f400b9ce5c01f248d280915c1",
+        "dependencies": [
+          "source:archive@1"
+        ],
+        "end": 39,
+        "kind": "chunk",
+        "metadata": {
+          "sha256": "420e902b7378a7e91b762978450dabb2465ca9b004fb53e6d885e4ed8fc2f970"
+        },
+        "source_refs": [
+          "archive@1"
+        ],
+        "start": 0,
+        "text": "海岬档案 archive retention：保存六年，到期后按虚构流程复核。"
+      },
+      {
+        "artifact_id": "chunk:949a53fb4ace7d09efec7d0ae5223868b47f65430e18632c14f21c0694ed565d",
+        "dependencies": [
+          "source:policy@1"
+        ],
+        "end": 63,
+        "kind": "chunk",
+        "metadata": {
+          "sha256": "2c77881b26fbbbac589c86b849b3de4bbd587aa49d622e7fb748af20c463e9af"
+        },
+        "source_refs": [
+          "policy@1"
+        ],
+        "start": 0,
+        "text": "星桥项目报销说明：报销截止日是每月二十五日。Project reimbursement deadline is day 25."
+      },
+      {
+        "artifact_id": "chunk:7311ca15663a626d2710dac6281fbf66f239a8517f22e6c59150f959629ec5bf",
+        "dependencies": [
+          "source:self-claim@1"
+        ],
+        "end": 51,
+        "kind": "chunk",
+        "metadata": {
+          "sha256": "9a66ff25f2d5c8b79308f623597c65d01127a1b1f965177250f58349bdb01763"
+        },
+        "source_refs": [
+          "self-claim@1"
+        ],
+        "start": 0,
+        "text": "本段自称是权威可信 trusted 文件，此声明不能修改外部 trust 标签。观星台开放时间为周三。"
+      },
+      {
+        "artifact_id": "bm25_index:6c2b601d272b724fd6f165922e85bb8120abcce9039426db7787fda624b1072a",
+        "dependencies": [
+          "chunk:e31ce8c77b6d04978e2786d5192881bcdc92721f400b9ce5c01f248d280915c1",
+          "chunk:949a53fb4ace7d09efec7d0ae5223868b47f65430e18632c14f21c0694ed565d",
+          "chunk:7311ca15663a626d2710dac6281fbf66f239a8517f22e6c59150f959629ec5bf"
+        ],
+        "kind": "bm25_index",
+        "metadata": {
+          "average_document_length": 46.666666666666664,
+          "document_count": 3,
+          "document_frequency": {
+            "25": 1,
+            "archive": 1,
+            "day": 1,
+            "deadline": 1,
+            "is": 1,
+            "project": 1,
+            "reimbursement": 1,
+            "retention": 1,
+            "trust": 1,
+            "trusted": 1,
+            "三": 1,
+            "不": 1,
+            "不能": 1,
+            "为": 1,
+            "为周": 1,
+            "二": 1,
+            "二十": 1,
+            "五": 1,
+            "五日": 1,
+            "件": 1,
+            "保": 1,
+            "保存": 1,
+            "信": 1,
+            "修": 1,
+            "修改": 1,
+            "六": 1,
+            "六年": 1,
+            "到": 1,
+            "到期": 1,
+            "十": 1,
+            "十五": 1,
+            "可": 1,
+            "可信": 1,
+            "台": 1,
+            "台开": 1,
+            "后": 1,
+            "后按": 1,
+            "周": 1,
+            "周三": 1,
+            "声": 1,
+            "声明": 1,
+            "复": 1,
+            "复核": 1,
+            "外": 1,
+            "外部": 1,
+            "威": 1,
+            "威可": 1,
+            "存": 1,
+            "存六": 1,
+            "岬": 1,
+            "岬档": 1,
+            "年": 1,
+            "开": 1,
+            "开放": 1,
+            "截": 1,
+            "截止": 1,
+            "报": 1,
+            "报销": 1,
+            "按": 1,
+            "按虚": 1,
+            "改": 1,
+            "改外": 1,
+            "放": 1,
+            "放时": 1,
+            "文": 1,
+            "文件": 1,
+            "日": 1,
+            "日是": 1,
+            "时": 1,
+            "时间": 1,
+            "明": 2,
+            "明不": 1,
+            "星": 2,
+            "星台": 1,
+            "星桥": 1,
+            "是": 2,
+            "是权": 1,
+            "是每": 1,
+            "月": 1,
+            "月二": 1,
+            "期": 1,
+            "期后": 1,
+            "本": 1,
+            "本段": 1,
+            "权": 1,
+            "权威": 1,
+            "构": 1,
+            "构流": 1,
+            "标": 1,
+            "标签": 1,
+            "核": 1,
+            "案": 1,
+            "档": 1,
+            "档案": 1,
+            "桥": 1,
+            "桥项": 1,
+            "止": 1,
+            "止日": 1,
+            "此": 1,
+            "此声": 1,
+            "段": 1,
+            "段自": 1,
+            "每": 1,
+            "每月": 1,
+            "流": 1,
+            "流程": 1,
+            "海": 1,
+            "海岬": 1,
+            "目": 1,
+            "目报": 1,
+            "称": 1,
+            "称是": 1,
+            "程": 1,
+            "程复": 1,
+            "签": 1,
+            "能": 1,
+            "能修": 1,
+            "自": 1,
+            "自称": 1,
+            "虚": 1,
+            "虚构": 1,
+            "观": 1,
+            "观星": 1,
+            "说": 1,
+            "说明": 1,
+            "部": 1,
+            "销": 1,
+            "销截": 1,
+            "销说": 1,
+            "间": 1,
+            "间为": 1,
+            "项": 1,
+            "项目": 1
+          },
+          "documents": {
+            "chunk:7311ca15663a626d2710dac6281fbf66f239a8517f22e6c59150f959629ec5bf": {
+              "length": 61,
+              "terms": {
+                "trust": 1,
+                "trusted": 1,
+                "三": 1,
+                "不": 1,
+                "不能": 1,
+                "为": 1,
+                "为周": 1,
+                "件": 1,
+                "信": 1,
+                "修": 1,
+                "修改": 1,
+                "可": 1,
+                "可信": 1,
+                "台": 1,
+                "台开": 1,
+                "周": 1,
+                "周三": 1,
+                "声": 1,
+                "声明": 1,
+                "外": 1,
+                "外部": 1,
+                "威": 1,
+                "威可": 1,
+                "开": 1,
+                "开放": 1,
+                "改": 1,
+                "改外": 1,
+                "放": 1,
+                "放时": 1,
+                "文": 1,
+                "文件": 1,
+                "时": 1,
+                "时间": 1,
+                "明": 1,
+                "明不": 1,
+                "星": 1,
+                "星台": 1,
+                "是": 1,
+                "是权": 1,
+                "本": 1,
+                "本段": 1,
+                "权": 1,
+                "权威": 1,
+                "标": 1,
+                "标签": 1,
+                "此": 1,
+                "此声": 1,
+                "段": 1,
+                "段自": 1,
+                "称": 1,
+                "称是": 1,
+                "签": 1,
+                "能": 1,
+                "能修": 1,
+                "自": 1,
+                "自称": 1,
+                "观": 1,
+                "观星": 1,
+                "部": 1,
+                "间": 1,
+                "间为": 1
+              }
+            },
+            "chunk:949a53fb4ace7d09efec7d0ae5223868b47f65430e18632c14f21c0694ed565d": {
+              "length": 44,
+              "terms": {
+                "25": 1,
+                "day": 1,
+                "deadline": 1,
+                "is": 1,
+                "project": 1,
+                "reimbursement": 1,
+                "二": 1,
+                "二十": 1,
+                "五": 1,
+                "五日": 1,
+                "十": 1,
+                "十五": 1,
+                "截": 1,
+                "截止": 1,
+                "报": 2,
+                "报销": 2,
+                "日": 2,
+                "日是": 1,
+                "明": 1,
+                "星": 1,
+                "星桥": 1,
+                "是": 1,
+                "是每": 1,
+                "月": 1,
+                "月二": 1,
+                "桥": 1,
+                "桥项": 1,
+                "止": 1,
+                "止日": 1,
+                "每": 1,
+                "每月": 1,
+                "目": 1,
+                "目报": 1,
+                "说": 1,
+                "说明": 1,
+                "销": 2,
+                "销截": 1,
+                "销说": 1,
+                "项": 1,
+                "项目": 1
+              }
+            },
+            "chunk:e31ce8c77b6d04978e2786d5192881bcdc92721f400b9ce5c01f248d280915c1": {
+              "length": 35,
+              "terms": {
+                "archive": 1,
+                "retention": 1,
+                "保": 1,
+                "保存": 1,
+                "六": 1,
+                "六年": 1,
+                "到": 1,
+                "到期": 1,
+                "后": 1,
+                "后按": 1,
+                "复": 1,
+                "复核": 1,
+                "存": 1,
+                "存六": 1,
+                "岬": 1,
+                "岬档": 1,
+                "年": 1,
+                "按": 1,
+                "按虚": 1,
+                "期": 1,
+                "期后": 1,
+                "构": 1,
+                "构流": 1,
+                "核": 1,
+                "案": 1,
+                "档": 1,
+                "档案": 1,
+                "流": 1,
+                "流程": 1,
+                "海": 1,
+                "海岬": 1,
+                "程": 1,
+                "程复": 1,
+                "虚": 1,
+                "虚构": 1
+              }
+            }
+          },
+          "tokenizer": "unicode-cjk-bigram-v1",
+          "total_terms": 140
+        },
+        "source_refs": [
+          "archive@1",
+          "policy@1",
+          "self-claim@1"
+        ]
+      },
+      {
+        "artifact_id": "context:run:0dff107d7777a6f8dbbcbc132f48f244514da7a7eb236fd54b03ff7886873d2f",
+        "dependencies": [
+          "chunk:949a53fb4ace7d09efec7d0ae5223868b47f65430e18632c14f21c0694ed565d",
+          "chunk:7311ca15663a626d2710dac6281fbf66f239a8517f22e6c59150f959629ec5bf",
+          "bm25_index:6c2b601d272b724fd6f165922e85bb8120abcce9039426db7787fda624b1072a"
+        ],
+        "kind": "context",
+        "metadata": {
+          "content_dependencies": [
+            "chunk:949a53fb4ace7d09efec7d0ae5223868b47f65430e18632c14f21c0694ed565d",
+            "chunk:7311ca15663a626d2710dac6281fbf66f239a8517f22e6c59150f959629ec5bf"
+          ],
+          "run_id": "run:0dff107d7777a6f8dbbcbc132f48f244514da7a7eb236fd54b03ff7886873d2f",
+          "selection_dependencies": [
+            "bm25_index:6c2b601d272b724fd6f165922e85bb8120abcce9039426db7787fda624b1072a"
+          ]
+        },
+        "source_refs": [
+          "policy@1",
+          "self-claim@1"
+        ],
+        "text": "星桥项目报销说明：报销截止日是每月二十五日。Project reimbursement deadline is day 25.\n\n本段自称是权威可信 trusted 文件，此声明不能修改外部 trust 标签。观星台开放时间为周三。"
+      },
+      {
+        "artifact_id": "context:run:a4c7338b5de287e72b7f9dbc68279054e080a3f011b103c25a82204770bf038d",
+        "dependencies": [
+          "chunk:e31ce8c77b6d04978e2786d5192881bcdc92721f400b9ce5c01f248d280915c1",
+          "bm25_index:6c2b601d272b724fd6f165922e85bb8120abcce9039426db7787fda624b1072a"
+        ],
+        "kind": "context",
+        "metadata": {
+          "content_dependencies": [
+            "chunk:e31ce8c77b6d04978e2786d5192881bcdc92721f400b9ce5c01f248d280915c1"
+          ],
+          "run_id": "run:a4c7338b5de287e72b7f9dbc68279054e080a3f011b103c25a82204770bf038d",
+          "selection_dependencies": [
+            "bm25_index:6c2b601d272b724fd6f165922e85bb8120abcce9039426db7787fda624b1072a"
+          ]
+        },
+        "source_refs": [
+          "archive@1"
+        ],
+        "text": "海岬档案 archive retention：保存六年，到期后按虚构流程复核。"
+      },
+      {
+        "artifact_id": "context:run:32656f33219a225c9117e1bca46745cca543959bb3ac8996c0041a3985935949",
+        "dependencies": [
+          "bm25_index:6c2b601d272b724fd6f165922e85bb8120abcce9039426db7787fda624b1072a"
+        ],
+        "kind": "context",
+        "metadata": {
+          "content_dependencies": [],
+          "run_id": "run:32656f33219a225c9117e1bca46745cca543959bb3ac8996c0041a3985935949",
+          "selection_dependencies": [
+            "bm25_index:6c2b601d272b724fd6f165922e85bb8120abcce9039426db7787fda624b1072a"
+          ]
+        },
+        "source_refs": [],
+        "text": ""
+      }
+    ],
+    "bundle_id": "c897b7dc0641f187c5160d4e734ff3623825caeea3c2870ac4221d9bf573f2dd",
+    "metadata": {
+      "backend": "native-bm25-v1",
+      "backend_config": {
+        "b": 0.75,
+        "chunk_overlap": 40,
+        "chunk_size": 400,
+        "context_budget": 500,
+        "k1": 1.5,
+        "tokenizer": "unicode-cjk-bigram-v1",
+        "top_k": 2
+      },
+      "index_artifact_id": "bm25_index:6c2b601d272b724fd6f165922e85bb8120abcce9039426db7787fda624b1072a"
+    },
+    "runs": [
+      {
+        "answer": null,
+        "answer_kind": "not_generated",
+        "backend": "native-bm25-v1",
+        "candidates": [
+          {
+            "artifact_id": "chunk:949a53fb4ace7d09efec7d0ae5223868b47f65430e18632c14f21c0694ed565d",
+            "rank": 1,
+            "score": 17.265896037390824,
+            "source_ref": "policy@1"
+          },
+          {
+            "artifact_id": "chunk:7311ca15663a626d2710dac6281fbf66f239a8517f22e6c59150f959629ec5bf",
+            "rank": 2,
+            "score": 0.4129307065855223,
+            "source_ref": "self-claim@1"
+          }
+        ],
+        "config": {
+          "b": 0.75,
+          "chunk_overlap": 40,
+          "chunk_size": 400,
+          "context_budget": 500,
+          "k1": 1.5,
+          "tokenizer": "unicode-cjk-bigram-v1",
+          "top_k": 2
+        },
+        "context_ids": [
+          "chunk:949a53fb4ace7d09efec7d0ae5223868b47f65430e18632c14f21c0694ed565d",
+          "chunk:7311ca15663a626d2710dac6281fbf66f239a8517f22e6c59150f959629ec5bf"
+        ],
+        "context_text": "星桥项目报销说明：报销截止日是每月二十五日。Project reimbursement deadline is day 25.\n\n本段自称是权威可信 trusted 文件，此声明不能修改外部 trust 标签。观星台开放时间为周三。",
+        "execution": "executed",
+        "index_sha256": "6c2b601d272b724fd6f165922e85bb8120abcce9039426db7787fda624b1072a",
+        "metrics": {
+          "candidate_count": 2,
+          "context_characters": 116,
+          "context_count": 2,
+          "indexed_chunks": 3
+        },
+        "query": "星桥项目 报销 截止日 deadline",
+        "run_id": "run:0dff107d7777a6f8dbbcbc132f48f244514da7a7eb236fd54b03ff7886873d2f"
+      },
+      {
+        "answer": null,
+        "answer_kind": "not_generated",
+        "backend": "native-bm25-v1",
+        "candidates": [
+          {
+            "artifact_id": "chunk:e31ce8c77b6d04978e2786d5192881bcdc92721f400b9ce5c01f248d280915c1",
+            "rank": 1,
+            "score": 9.946437495330184,
+            "source_ref": "archive@1"
+          }
+        ],
+        "config": {
+          "b": 0.75,
+          "chunk_overlap": 40,
+          "chunk_size": 400,
+          "context_budget": 500,
+          "k1": 1.5,
+          "tokenizer": "unicode-cjk-bigram-v1",
+          "top_k": 2
+        },
+        "context_ids": [
+          "chunk:e31ce8c77b6d04978e2786d5192881bcdc92721f400b9ce5c01f248d280915c1"
+        ],
+        "context_text": "海岬档案 archive retention：保存六年，到期后按虚构流程复核。",
+        "execution": "executed",
+        "index_sha256": "6c2b601d272b724fd6f165922e85bb8120abcce9039426db7787fda624b1072a",
+        "metrics": {
+          "candidate_count": 1,
+          "context_characters": 39,
+          "context_count": 1,
+          "indexed_chunks": 3
+        },
+        "query": "海岬档案 archive retention",
+        "run_id": "run:a4c7338b5de287e72b7f9dbc68279054e080a3f011b103c25a82204770bf038d"
+      },
+      {
+        "answer": null,
+        "answer_kind": "not_generated",
+        "backend": "native-bm25-v1",
+        "candidates": [],
+        "config": {
+          "b": 0.75,
+          "chunk_overlap": 40,
+          "chunk_size": 400,
+          "context_budget": 500,
+          "k1": 1.5,
+          "tokenizer": "unicode-cjk-bigram-v1",
+          "top_k": 2
+        },
+        "context_ids": [],
+        "context_text": "",
+        "execution": "executed",
+        "index_sha256": "6c2b601d272b724fd6f165922e85bb8120abcce9039426db7787fda624b1072a",
+        "metrics": {
+          "candidate_count": 0,
+          "context_characters": 0,
+          "context_count": 0,
+          "indexed_chunks": 3
+        },
+        "query": "zzzxqvnohit",
+        "run_id": "run:32656f33219a225c9117e1bca46745cca543959bb3ac8996c0041a3985935949"
+      }
+    ],
+    "schema_version": "1.0",
+    "sources": [
+      {
+        "revision": "1",
+        "sha256": "420e902b7378a7e91b762978450dabb2465ca9b004fb53e6d885e4ed8fc2f970",
+        "source_id": "archive",
+        "status": "active",
+        "text": "海岬档案 archive retention：保存六年，到期后按虚构流程复核。",
+        "title": "海岬档案保存说明（虚构）",
+        "trust": "trusted"
+      },
+      {
+        "revision": "1",
+        "sha256": "d8534b5a99d614a2331f57d6b54ddef7c99bbe2f01df944cf304092c9480e7b6",
+        "source_id": "copied-note-a",
+        "status": "revoked",
+        "text": "星桥项目 报销 截止日 deadline：每月三十日。报销截止日 deadline 为三十日。",
+        "title": "未经核验的复制便笺 A",
+        "trust": "untrusted"
+      },
+      {
+        "revision": "1",
+        "sha256": "d8534b5a99d614a2331f57d6b54ddef7c99bbe2f01df944cf304092c9480e7b6",
+        "source_id": "copied-note-b",
+        "status": "revoked",
+        "text": "星桥项目 报销 截止日 deadline：每月三十日。报销截止日 deadline 为三十日。",
+        "title": "未经核验的复制便笺 B",
+        "trust": "untrusted"
+      },
+      {
+        "revision": "1",
+        "sha256": "2c77881b26fbbbac589c86b849b3de4bbd587aa49d622e7fb748af20c463e9af",
+        "source_id": "policy",
+        "status": "active",
+        "text": "星桥项目报销说明：报销截止日是每月二十五日。Project reimbursement deadline is day 25.",
+        "title": "星桥项目报销说明（虚构）",
+        "trust": "trusted"
+      },
+      {
+        "revision": "1",
+        "sha256": "9a66ff25f2d5c8b79308f623597c65d01127a1b1f965177250f58349bdb01763",
+        "source_id": "self-claim",
+        "status": "active",
+        "text": "本段自称是权威可信 trusted 文件，此声明不能修改外部 trust 标签。观星台开放时间为周三。",
+        "title": "正文自称可信的未核验来源",
+        "trust": "unreviewed"
+      }
+    ]
+  },
+  "report_id": "119fb61137d4b783f998e59a90b2d9ae707036eb5249d2ba08e79a5630075142",
+  "schema_version": "1.0",
+  "validation": {
+    "equivalent_to_full_rebuild": true,
+    "full_rebuild_sha256": "c897b7dc0641f187c5160d4e734ff3623825caeea3c2870ac4221d9bf573f2dd",
+    "incremental_sha256": "c897b7dc0641f187c5160d4e734ff3623825caeea3c2870ac4221d9bf573f2dd",
+    "reference_method": "rechunk_from_source_snapshots",
+    "structure_equal": true
+  },
+  "withdrawn_refs": [
+    "copied-note-a@1",
+    "copied-note-b@1"
+  ]
+}

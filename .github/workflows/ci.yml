@@ -1,0 +1,38 @@
+name: offline-evidence-checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: "3.11"
+          - os: windows-latest
+            python: "3.12"
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - run: python -m pip install -e ".[dev,ui]"
+      - run: python -m pytest -q
+      - run: python -m build
+      - run: python -m rag_audit benchmark --output artifacts/controlled-evaluation.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: evidence-${{ matrix.os }}-${{ matrix.python }}
+          path: |
+            artifacts/controlled-evaluation.json
+            dist/*
+

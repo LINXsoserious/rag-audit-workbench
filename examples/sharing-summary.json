@@ -1,0 +1,48 @@
+{
+  "format": "rag-audit.sharing-summary.v1",
+  "replayable": false,
+  "contains_original_text": false,
+  "baseline_fingerprint": "27adf95c0fbbde30f85016ce784c4d608a447b102dc447dda3ef7d6f1cc3b54d",
+  "withdrawn_source_fingerprints": [
+    "711cfb0439dcd0a730fb1f5568e55c05d66ab5c3fba033ea196fa44796349f42",
+    "0429eb3d43e13ba51c74ccd57c41bce236a0b0cd95db612f4ef2f913875b90d2"
+  ],
+  "queries": [
+    {
+      "query_fingerprint": "2c2a7c04ab2f536c488c19a2841ee62f3403527b9b247991b51e51d6d2a4f22e",
+      "equivalent": true,
+      "ranking_changed": true,
+      "before_context_count": 2,
+      "after_context_count": 2
+    },
+    {
+      "query_fingerprint": "d3155d3673dbddfb28f77acf7d0b051d7a080c0a6708b1b096637390e1abb085",
+      "equivalent": true,
+      "ranking_changed": false,
+      "before_context_count": 1,
+      "after_context_count": 1
+    },
+    {
+      "query_fingerprint": "cb5680dc40fc627fc462091e81fab323c6f4bf1b1d4c7af2ef66519219a4168e",
+      "equivalent": true,
+      "ranking_changed": false,
+      "before_context_count": 0,
+      "after_context_count": 0
+    }
+  ],
+  "full_rebuild_equivalent": true,
+  "metrics": {
+    "context_changed_count": 1,
+    "empty_context_count": 1,
+    "full_rebuild_seconds": 0.0009068999788723886,
+    "generation_calls": 0,
+    "incremental_seconds": 0.0007829000242054462,
+    "query_count": 3,
+    "ranking_changed_count": 1,
+    "removed_chunk_count": 2,
+    "retained_chunk_count": 3,
+    "total_seconds": 0.0032221999717876315,
+    "withdrawn_source_count": 2
+  },
+  "limitations": "Aggregate fingerprints support report comparison, not input replay or malicious-source attribution. Fingerprints are not anonymization against a party that already knows the source identifiers."
+}
