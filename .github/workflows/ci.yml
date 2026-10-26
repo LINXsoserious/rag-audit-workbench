@@ -35,4 +35,3 @@ jobs:
           path: |
             artifacts/controlled-evaluation.json
             dist/*
-

@@ -136,4 +136,3 @@ def test_invalid_unicode_key_and_excessive_nesting_have_readable_errors():
     nested = '{"schema_version":"1.0","metadata":{"nested":' + '[' * 600 + '0' + ']' * 600 + '}}'
     with pytest.raises(ValidationError, match="nesting"):
         load_input(nested)
-

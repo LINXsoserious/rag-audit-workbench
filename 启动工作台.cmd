@@ -30,4 +30,3 @@ exit /b 0
 echo Launch failed. Install Python 3.11 or newer and check the error above.
 pause
 exit /b 1
-

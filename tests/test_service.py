@@ -39,4 +39,3 @@ def test_failed_replay_does_not_write_report(tmp_path):
     with pytest.raises(ValueError):
         app.replay(key, ["does-not-exist@1"])
     assert app.list_reports(key) == []
-

@@ -260,4 +260,3 @@ def test_no_cache_means_cache_binding_is_not_applicable():
     report = audit_bundle(evidence_bundle())
     assert report["coverage"]["cache_binding"]["status"] == "not_applicable"
     assert report["passed"] is True
-

@@ -24,4 +24,3 @@ packages = ["src/rag_audit"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
-

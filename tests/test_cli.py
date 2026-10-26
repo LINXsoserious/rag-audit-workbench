@@ -71,5 +71,3 @@ def test_import_retains_failed_evidence_but_returns_incomplete_status(tmp_path, 
     assert result["bundle_id"]
     assert main(["list", "--db", str(db)]) == 0
     assert len(json.loads(capsys.readouterr().out)) == 1
-
-

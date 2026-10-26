@@ -23,4 +23,3 @@ def test_markdown_does_not_execute_source_html_or_break_code_fence():
     content = render_markdown(report)
     assert "\\<script\\>" in content
     assert "````json" in content
-
