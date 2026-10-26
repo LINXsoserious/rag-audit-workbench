@@ -5,6 +5,7 @@ import json
 import re
 
 from .schema import text_hash
+from .i18n import t
 
 
 def _safe(value) -> str:
@@ -12,27 +13,30 @@ def _safe(value) -> str:
     return re.sub(r"([\\`*_{}\[\]()#+.!|<>])", r"\\\1", text)
 
 
-def render_markdown(report: dict) -> str:
-    lines = ["# RAG 源撤回审计报告", "", f"执行状态：{_safe(report.get('execution', 'unknown'))}",
-             f"基线证据包：{_safe(report.get('baseline_bundle_id', 'unknown'))}",
-             f"报告 ID：{_safe(report.get('report_id', '未入库'))}", "",
-             "本报告描述指定输入、配置和干预下的系统变化。它不单独证明来源恶意或识别攻击者。", "",
-             "## 撤回来源", ""]
+def render_markdown(report: dict, lang: str = "zh") -> str:
+    """Render a human report without modifying evidence or its machine schema."""
+    lines = [t(lang, "# RAG 源撤回审计报告"), "",
+             t(lang, "执行状态：{value}", value=_safe(report.get("execution", "unknown"))),
+             t(lang, "基线证据包：{value}", value=_safe(report.get("baseline_bundle_id", "unknown"))),
+             t(lang, "报告 ID：{value}", value=_safe(report.get("report_id", t(lang, "未入库")))), "",
+             t(lang, "本报告描述指定输入、配置和干预下的系统变化。它不单独证明来源恶意或识别攻击者。"), "",
+             t(lang, "## 撤回来源"), ""]
     lines += [f"- {_safe(ref)}" for ref in report.get("withdrawn_refs", [])]
-    lines += ["", "## 完整重建对照", "", f"一致：{report.get('validation', {}).get('equivalent_to_full_rebuild', False)}", ""]
+    lines += ["", t(lang, "## 完整重建对照"), "",
+              t(lang, "一致：{value}", value=report.get("validation", {}).get("equivalent_to_full_rebuild", False)), ""]
     for item in report.get("queries", []):
         before, after = item.get("before", {}), item.get("after", {})
-        lines += [f"### 查询：{_safe(item.get('query', ''))}", "",
-                  f"排序发生变化：{bool(item.get('ranking_changed'))}",
-                  f"完整重建一致：{bool(item.get('equivalent'))}",
-                  f"撤回前上下文：{_safe(', '.join(before.get('context_ids', [])))}",
-                  f"撤回后上下文：{_safe(', '.join(after.get('context_ids', [])))}", ""]
+        lines += [t(lang, "### 查询：{value}", value=_safe(item.get("query", ""))), "",
+                  t(lang, "排序发生变化：{value}", value=bool(item.get("ranking_changed"))),
+                  t(lang, "完整重建一致：{value}", value=bool(item.get("equivalent"))),
+                  t(lang, "撤回前上下文：{value}", value=_safe(", ".join(before.get("context_ids", [])))),
+                  t(lang, "撤回后上下文：{value}", value=_safe(", ".join(after.get("context_ids", [])))), ""]
         if after.get("answer_kind") == "not_generated":
-            lines += ["未启用生成模型；本项只报告检索与上下文变化，不计算答案恢复。", ""]
+            lines += [t(lang, "未启用生成模型；本项只报告检索与上下文变化，不计算答案恢复。"), ""]
     detail = json.dumps({"invalidation": report.get("invalidation", {}), "metrics": report.get("metrics", {})}, ensure_ascii=False, indent=2)
     fence = "`" * max(3, 1 + max((len(item) for item in re.findall(r"`+", detail)), default=0))
-    lines += ["## 失效传播与成本", "", fence + "json", detail, fence, "",
-              "完整输入、精确参数和新证据包请查同名 JSON 报告。哈希仅支持一致性检查，不证明原始记录真实。", ""]
+    lines += [t(lang, "## 失效传播与成本"), "", fence + "json", detail, fence, "",
+              t(lang, "完整输入、精确参数和新证据包请查同名 JSON 报告。哈希仅支持一致性检查，不证明原始记录真实。"), ""]
     return "\n".join(lines)
 
 

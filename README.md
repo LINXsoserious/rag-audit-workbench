@@ -1,18 +1,22 @@
-# RAG 来源审计工作台
+# RAG Source Audit Workbench
 
-**把一份 RAG 记录变成可核验的案件：检查来源与跨度，在副本中撤回源版本，真实重建检索索引，并与独立完整重建比较。**
+English · [简体中文](README.zh-CN.md)
 
-首版是本地、单用户、离线运行的工程工具。核心依赖 Python 标准库；可选中文页面使用 Streamlit。无需账户、密钥、付费 API 或 GPU。
+**Turn a RAG record into a verifiable case: audit sources and spans, withdraw source revisions in an isolated copy, rebuild the retrieval index, and compare an independent full rebuild.**
 
-![案件页面](docs/assets/overview.png)
+This is a local, single-user, offline engineering tool. The core uses only the Python standard library; the optional bilingual interface uses Streamlit. No account, API key, paid API, or GPU is required.
 
-[查看联合撤回后的比较页面](docs/assets/replay.png) · [受控验收结果](examples/controlled-evaluation.json) · [验证范围与命令](docs/VALIDATION.md)
+![English source-withdrawal workflow](docs/assets/overview-en.jpg)
 
-## 快速运行
+[Chinese case overview](docs/assets/overview.png)
 
-需要 Python 3.11 或更高版本。在本项目根目录执行：
+[View the joint-withdrawal comparison](docs/assets/replay.png) · [Controlled evaluation results](examples/controlled-evaluation.json) · [Validation scope and commands](docs/VALIDATION.md)
 
-Windows 可直接双击根目录的 **启动工作台.cmd**。首次运行会自动建立项目内 `.venv` 并安装页面所需的免费 Python 包；随后打开本地工作台。手动安装方式如下：
+## Quick start
+
+Requires Python 3.11 or later. Run these commands from the repository root.
+
+On Windows, double-click **启动工作台.cmd**. On its first run, the launcher creates a project-local `.venv`, installs the free Python packages needed for the interface, and opens the local workbench. To install manually:
 
 ```powershell
 python -m venv .venv
@@ -20,49 +24,49 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m streamlit run ui.py
 ```
 
-已有 Python 环境时，也可以直接执行：
+With an existing Python environment:
 
 ```powershell
 python -m pip install -e ".[ui]"
 python -m streamlit run ui.py
 ```
 
-页面操作顺序：
+The interface starts in Simplified Chinese. Select **English** in the sidebar's **语言 / Language** control. Switching language retains the current case, selected source, withdrawal set, queries, and saved reports; it does not execute another replay. Only interface text and human-readable Markdown reports are translated. Source text, source titles, queries, source IDs, hashes, and JSON protocol fields remain unchanged.
 
-1. 点击左侧“载入内置示例”，或上传统一 JSON / 受支持的 M4、M5 JSONL。
-2. 查看审计问题、来源版本、信任状态、原文高亮和派生依赖。
-3. 选择一个或多个活动来源版本，编辑查询集合，点击“执行撤回与完整重建验证”。
-4. 检查撤回前后候选、实际上下文和完整重建一致性，导出完整 JSON / Markdown 或不含原文的分享摘要。
-5. 点击“验证事件链”，复核本地账本的一致性。
+1. Click **Load built-in example**, or upload bundle JSON / supported M4 or M5 JSONL.
+2. Inspect findings, source revisions, trust metadata, highlighted source spans, and derived dependencies.
+3. Select one or more active source revisions, edit the query set, and click **Run withdrawal and full-rebuild verification**.
+4. Compare candidates and actual context before and after withdrawal. Check full-rebuild equivalence, then export the full JSON / Markdown report or a sharing summary without source text.
+5. Click **Verify event chain** to check the local ledger.
 
-重复载入相同示例会复用证据包，不覆盖已有来源版本。页面在项目目录的 `.rag-audit/evidence.sqlite` 保存本地数据。可在启动前设置独立存储目录：
+Loading the same example again reuses the evidence bundle and does not overwrite source revisions. The interface stores local data in `.rag-audit/evidence.sqlite` under the project directory. To use another directory, set it before launch:
 
 ```powershell
 $env:RAG_AUDIT_HOME = "D:\RagAuditData"
 python -m streamlit run ui.py
 ```
 
-Linux / macOS 可使用 `python3`、`.venv/bin/python` 和 `RAG_AUDIT_HOME=/path/to/data python -m streamlit run ui.py`。交付仓库不包含私有历史数据、运行数据库或第三方模型。
+On Linux / macOS, use `python3`, `.venv/bin/python`, and `RAG_AUDIT_HOME=/path/to/data python -m streamlit run ui.py` as appropriate. The repository does not ship private historical data, runtime databases, or third-party models.
 
-## CLI 与 Python 接入
+## CLI and Python integration
 
-仅使用命令行或 SDK 时安装核心包：
+Install the core package for command-line or SDK use:
 
 ```powershell
 python -m pip install -e .
-python -m rag_audit --help
-python -m rag_audit demo --db .rag-audit/evidence.sqlite
-python -m rag_audit inspect examples/demo-bundle.json
-python -m rag_audit replay examples/demo-bundle.json --withdraw copied-note-a@1 --withdraw copied-note-b@1 --output replay-report.json
-python -m rag_audit verify --db .rag-audit/evidence.sqlite
-python -m rag_audit benchmark --output benchmark-report.json
+python -m rag_audit --lang en --help
+python -m rag_audit demo --lang en --db .rag-audit/evidence.sqlite
+python -m rag_audit inspect examples/demo-bundle.json --lang en
+python -m rag_audit replay examples/demo-bundle.json --lang en --withdraw copied-note-a@1 --withdraw copied-note-b@1 --output replay-report.json
+python -m rag_audit verify --lang en --db .rag-audit/evidence.sqlite
+python -m rag_audit benchmark --lang en --output benchmark-report.json
 ```
 
-撤回引用以示例包中的实际 `source_id@revision` 为准。可重复传入 `--withdraw` 执行联合撤回；先运行 `inspect` 核对输入。具体参数以 `--help` 为准。
+Use the actual `source_id@revision` values in the evidence bundle. Repeat `--withdraw` for joint withdrawal, and inspect the input first. `--lang en|zh` works before the command or after the subcommand; for example, `python -m rag_audit --lang en replay --help` or `python -m rag_audit report REPORT_ID --lang en --format markdown`. The default is `zh`. JSON reports and sharing summaries keep their fixed protocol regardless of language. Run `--help` for all options.
 
-退出码：`0` 成功且所要求检查通过；`1` 检查失败或审计覆盖不足；`2` 输入或执行错误。导入返回 `1` 时仍保留证据。普通导出文件默认不覆盖；`--force` 也不能覆盖正在使用的数据库、其 sidecar 或输入证据。
+Exit codes: `0` means success with the requested checks passing; `1` means failed checks or incomplete audit coverage; `2` means an input or execution error. An import returning `1` still retains the evidence. Export files are not overwritten by default. Even `--force` cannot overwrite the active database, its sidecars, or input evidence.
 
-完整 SDK 例子：
+Complete SDK example:
 
 ```python
 from pathlib import Path
@@ -72,58 +76,60 @@ from rag_audit.report import render_markdown
 from rag_audit.service import Workbench
 
 workbench = Workbench(Path(".rag-audit") / "evidence.sqlite")
-bundle_id = workbench.ingest(demo_bundle(), label="我的第一个案件")
+bundle_id = workbench.ingest(demo_bundle(), label="My first case")
 audit = workbench.audit(bundle_id)
 print(audit["counts"])
 
 report = workbench.replay(bundle_id, DEMO_WITHDRAWALS, DEMO_QUERIES)
 print(report["validation"]["equivalent_to_full_rebuild"])
-Path("replay-report.md").write_text(render_markdown(report), encoding="utf-8")
+Path("replay-report.md").write_text(render_markdown(report, lang="en"), encoding="utf-8")
 print(workbench.verify_ledger())
 ```
 
-## 已实现能力与边界
+`render_markdown(report)` remains backward compatible and defaults to Chinese. Pass `lang="en"` for English. Language preferences do not enter the content-addressed identity of evidence bundles or intervention reports.
 
-| 能力 | 首版状态 | 证据范围 |
+## Capabilities and boundaries
+
+| Capability | Status | Evidence scope |
 | --- | --- | --- |
-| 统一证据格式、版本与哈希 | 已实现 | 检查给定记录的一致性；不保证采集内容真实 |
-| 来源、跨度、产物、运行记录审计 | 已实现 | 问题可回到对应记录；缺项明确标注 |
-| 外部 trust 元数据 | 已实现 | 正文中的“官方”“可信”等词不能提升权限 |
-| CPU BM25 源撤回 | 已实现 | 撤回源版本，传播派生失效，重新构建并查询 |
-| 独立完整重建对照 | 已实现 | 核验固定输入、配置、查询下的检索记录等价性 |
-| M4/M5 JSONL 导入 | 已实现 | 历史记录审计与观察比较，标记 `imported_history` |
-| 本地案件页面、报告与事件链 | 已实现 | SQLite 存储、JSON / Markdown 导出、修改检测 |
-| Microsoft GraphRAG / 图、社区摘要重建 | 尚未实现 | 后续阶段需独立适配与验证 |
-| 真实 LLM 生成、答案恢复率 | 尚未实现 | 首版 `answer=null`、`answer_kind=not_generated` |
-| 恶意判断、攻击者归因、全局最小原因搜索 | 未提供 | 影响变化不能自动升级为这些结论 |
+| Unified evidence format, revisions, and hashes | Implemented | Checks supplied-record consistency; does not establish source truth |
+| Audits of sources, spans, artifacts, and runs | Implemented | Findings link to records; missing information is explicit |
+| External trust metadata | Implemented | Words such as “official” or “trusted” inside source text cannot raise privileges |
+| CPU BM25 source withdrawal | Implemented | Withdraws source revisions, propagates invalidation, rebuilds and queries |
+| Independent full-rebuild comparison | Implemented | Checks retrieval-record equivalence for fixed inputs, configuration, and queries |
+| M4/M5 JSONL import | Implemented | Historical auditing and observational comparison, marked `imported_history` |
+| Local case interface, reports, and event chain | Implemented | SQLite storage, JSON / Markdown export, and modification detection |
+| Microsoft GraphRAG / graph and community-summary rebuilding | Not implemented | Requires separate adapters and validation |
+| Real LLM generation and answer recovery | Not implemented | This release uses `answer=null`, `answer_kind=not_generated` |
+| Malicious-source judgment, attacker attribution, global minimum-cause search | Not provided | Observed influence does not establish these conclusions |
 
-历史导入不会被页面重新执行，也不会因为转换成统一格式而获得原后端的重建能力。原始证据保留，撤回作用于隔离副本；首版不自动替用户作恶意判定或删除原始文件。
+Imported historical runs are not re-executed by the interface. Converting them to the unified format does not add rebuilding support for their original backend. Original evidence remains intact; withdrawal acts on an isolated copy. The tool does not automatically classify sources as malicious or delete original files.
 
-BM25 的全局词频与平均长度会随源集合变化。回放需要重新检索，不能只从旧 Top-K 中删去撤回来源。完整重建对照验证这一机制；它不等价于真实生成模型的保护效果。
+BM25 document frequencies and average document length change with the source set. Replay must retrieve again, rather than merely remove withdrawn sources from an old Top-K. The full-rebuild reference checks this mechanism; it does not establish protection of a real generation model.
 
-外部缓存的 `metadata.cache_binding={input_sha256, processor_version, config_sha256}` 在首版仅核验字段形态。即使字段齐全，实际绑定仍为 `not_verified`，并使审计覆盖 `complete=false`；本工具不据此验证缓存可安全复用。没有外部缓存的原生 BM25 案件不受该限制影响。
+For external caches, this release checks only the field structure of `metadata.cache_binding={input_sha256, processor_version, config_sha256}`. Even when all fields are present, the actual binding remains `not_verified` and audit coverage has `complete=false`. The tool does not use those fields to certify safe cache reuse. Native BM25 cases without external caches are unaffected by this limitation.
 
-本项目的成果定位是**可接入、可回放、可复核的工程闭环**，不主张首创来源追溯算法。检索级效果应连同查询分母、正常查询变化、空上下文和重建成本一起阅读。
+The deliverable is an **integrable, replayable, reviewable engineering workflow**, without a claim of inventing source-provenance algorithms. Read retrieval effects alongside the query denominator, changes to normal queries, empty contexts, and rebuilding costs.
 
-## 格式与外部适配
+## Format and adapters
 
-- [完整证据协议](docs/FORMAT.md)：字段、稳定引用、Unicode 字符跨度、执行状态、报告与校验边界。
-- [适配器说明](docs/ADAPTERS.md)：已有日志转换、自有文本建库和未来后端接入约束。
-- [批准的首版实现计划](docs/superpowers/plans/2026-10-26-rag-audit-v01.md)：任务与验收范围。
+- [Evidence protocol](docs/FORMAT.md): fields, stable references, Unicode character spans, execution states, reports, and validation boundaries.
+- [Adapter guide](docs/ADAPTERS.md): historical log conversion, indexing your own text, and requirements for future backends.
+- [Approved initial implementation plan](docs/superpowers/plans/2026-10-26-rag-audit-v01.md): tasks and acceptance scope.
 
-原文在页面上经过 HTML 转义。完整 JSON 报告包含原文和回放快照，Markdown 保留查询与来源引用；对外分享前自行核对内容。专用“分享摘要”只保留哈希、白名单数值和验证结果，不含原文、查询、标签或来源 ID，并明确标记 `replayable=false`。它用于分享汇总结论，不能代替完整回放材料。修改或脱敏后的输入是新的证据内容，应生成新的哈希与版本。
+These supporting documents are currently in Chinese. Source text is HTML-escaped in the interface. Full JSON reports include original text and replay snapshots; Markdown retains queries and source references. Review exports before external sharing. The dedicated sharing summary contains only fingerprints, allowlisted numeric aggregates, and validation results, excluding original text, queries, labels, and source IDs. It explicitly sets `replayable=false`: it communicates aggregate results and cannot replace complete replay material. Edited or redacted input is new evidence content and should receive a new hash and revision.
 
-## 本地验证
+## Local verification
 
 ```powershell
 python -m pip install -e ".[ui,dev]"
 python -m pytest -q
 python -m build
-python -m rag_audit benchmark --output benchmark-report.json
+python -m rag_audit benchmark --lang en --output benchmark-report.json
 ```
 
-测试覆盖默认后端撤回与完整重建等价性、格式导入、引用与跨度、存储事务、事件链以及页面中的示例、错误导入和执行流程。没有安装可选 UI 依赖时，页面测试会跳过；发布验收应安装 `ui` 后再运行。
+Tests cover withdrawal/full-rebuild equivalence, import formats, references and spans, storage transactions, the event chain, and Chinese/English interface workflows: built-in cases, failed imports, replay, state retention on language switches, CLI localization, and stable machine JSON. Interface tests skip if the optional UI dependency is absent; install `ui` before release validation.
 
-哈希链能发现与已知账本状态不一致的修改。若攻击者能同时改写全部数据库与所有外部检查点，仅检查数据库本身不能证明历史未被重写。请将重要检查点保存在独立位置。
+The hash chain can detect changes inconsistent with a known ledger state. If an attacker rewrites the entire database and every external checkpoint, checking the database alone cannot establish that history was preserved. Keep important checkpoints independently.
 
-许可证：MIT。示例文本与本项目实现为独立编写。
+See [CHANGELOG.md](CHANGELOG.md) for release changes. License: MIT. Example text and implementation were independently authored.

@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "rag-audit-workbench"
-version = "0.1.0"
+version = "0.2.0"
 description = "Offline RAG evidence auditing and source-revocation replay workbench"
 requires-python = ">=3.11"
 license = "MIT"

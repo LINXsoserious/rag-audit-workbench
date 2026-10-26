@@ -2,6 +2,12 @@
 
 本文件记录工程验证范围。受控案例是自编夹具，不是外部榜单、真实攻击发现率或 LLM 答案恢复结果。
 
+## v0.2 bilingual verification
+
+2026-10-26: the complete Windows / Python 3.12.3 suite passed **172 tests**. Localization checks cover English UI/replay, Chinese-English state retention, translated frontend option identities and selected strings, CLI language placement/help/errors, Markdown language selection and stable machine JSON. The actual browser workflow loaded a Chinese case, switched to English, correctly refreshed the case/full-source labels, and executed a joint withdrawal matching an independent full rebuild. Switching back retained the saved report. Original source text and queries were kept unchanged. See [the English workflow screenshot](assets/overview-en.jpg).
+
+The following original verification record describes v0.1; later CI results apply to their exact commits.
+
 2026-10-26 在 Windows / Python 3.12.3 本地完整运行：**157 passed**（含 9 项页面测试）。wheel 与 sdist 构建成功；wheel 在独立空虚拟环境中安装后，示例、审计、联合撤回、账本验证和受控验收均运行成功。页面检查使用 Streamlit 1.66.1。
 
 ## 本地复核方法
